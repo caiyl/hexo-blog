@@ -1,0 +1,28 @@
+
+BWeb:BoldAndItalicTagsCheck`"Replace this <i> tag by <em>.(°³ŠC
+CWeb:BoldAndItalicTagsCheckb"Replace this <i> tag by <em>.(İµ¥ù
+HWeb:BoldAndItalicTagsChecks"Replace this <i> tag by <em>.(õ´ôÍıÿÿÿÿ
+HWeb:BoldAndItalicTagsCheckx"Replace this <i> tag by <em>.(×³Ï–ıÿÿÿÿ
+IWeb:BoldAndItalicTagsCheck†"Replace this <i> tag by <em>.(É“—•şÿÿÿÿ
+IWeb:BoldAndItalicTagsCheckª"Replace this <i> tag by <em>.(Çå«…ÿÿÿÿÿ
+HWeb:TableWithoutCaptionCheck¿" Add a description to this table.(ÓÃ”X
+:	Web:S5256¿"%Add "<th>" headers to this "<table>".(ÓÃ”X
+IWeb:BoldAndItalicTagsCheckè"Replace this <i> tag by <em>.(Çå«…ÿÿÿÿÿ
+NWeb:TableWithoutCaptionCheckı" Add a description to this table.(ÌÄ„Ÿıÿÿÿÿ
+@	Web:S5256ı"%Add "<th>" headers to this "<table>".(ÌÄ„Ÿıÿÿÿÿ
+IWeb:BoldAndItalicTagsCheck¬"Replace this <i> tag by <em>.(Çå«…ÿÿÿÿÿ
+DWeb:BoldAndItalicTagsCheck´"Replace this <i> tag by <em>.(“ï·
+IWeb:BoldAndItalicTagsCheckõ"Replace this <i> tag by <em>.(Çå«…ÿÿÿÿÿ
+DWeb:BoldAndItalicTagsCheckı"Replace this <i> tag by <em>.(“ï·
+IWeb:TableWithoutCaptionCheck" Add a description to this table.(Ñèñ‰
+;	Web:S5256"%Add "<th>" headers to this "<table>".(Ñèñ‰
+IWeb:BoldAndItalicTagsCheckÄ"Replace this <i> tag by <em>.(Çå«…ÿÿÿÿÿ
+DWeb:BoldAndItalicTagsCheckÌ"Replace this <i> tag by <em>.(“ï·
+IWeb:TableWithoutCaptionCheckß" Add a description to this table.(ñç¥Æ
+;	Web:S5256ß"%Add "<th>" headers to this "<table>".(ñç¥Æ
+IWeb:BoldAndItalicTagsCheck‘"Replace this <i> tag by <em>.(Çå«…ÿÿÿÿÿ
+DWeb:BoldAndItalicTagsCheck™"Replace this <i> tag by <em>.(“ï·
+DWeb:BoldAndItalicTagsCheck¥"Replace this <i> tag by <em>.(©›Ä¹
+OWeb:AvoidCommentedOutCodeCheck©"Remove this commented out code.(‹òá¤ıÿÿÿÿ
+^	Web:S5255o"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(ææŠßúÿÿÿÿ
+Z	Web:S5255ÿ"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(œÖ¡‰
