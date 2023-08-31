@@ -63,17 +63,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Taro学习</title>
-    <url>/2023/07/26/Taro%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>终端命令安装：npm i -g @tarojs&#x2F;cli ，注意当前的node版本。v18.17.0</p>
-<p>初始化项目 taro init</p>
-<p>安装路由 npm install vue-router –save</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mysql知识</title>
     <url>/2020/01/03/mysql%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[<h2 id="批量插入测试数据"><a href="#批量插入测试数据" class="headerlink" title="批量插入测试数据"></a>批量插入测试数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">PROCEDURE</span></span><br><span class="line">    IF <span class="keyword">EXISTS</span> test_insert;</span><br><span class="line"></span><br><span class="line">DELIMITER ;;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> test_insert()</span><br><span class="line"></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">DECLARE</span> number <span class="type">INT</span> <span class="keyword">DEFAULT</span> <span class="number">1</span>;</span><br><span class="line">    WHILE (number <span class="operator">&lt;=</span> <span class="number">10000</span>) DO</span><br><span class="line"></span><br><span class="line">        <span class="keyword">insert</span> <span class="keyword">into</span> testabc(a,b,c) <span class="keyword">values</span>(concat(<span class="string">&#x27;a&#x27;</span>,number),concat(<span class="string">&#x27;b&#x27;</span>,number),concat(<span class="string">&#x27;c&#x27;</span>,number));</span><br><span class="line">        <span class="keyword">SET</span> number <span class="operator">=</span> number <span class="operator">+</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">END</span> WHILE;</span><br><span class="line">    <span class="keyword">commit</span>;</span><br><span class="line"><span class="keyword">END</span>;;</span><br><span class="line"><span class="keyword">CALL</span> test_insert();</span><br></pre></td></tr></table></figure>
@@ -92,20 +81,6 @@
 <p>Undolog</p>
 <h2 id="icp索引下推"><a href="#icp索引下推" class="headerlink" title="icp索引下推"></a>icp索引下推</h2><p>加上有联合索引a、b、c字段，where a &#x3D;</p>
 <h1 id><a href="#" class="headerlink" title></a></h1>]]></content>
-  </entry>
-  <entry>
-    <title>循环依赖</title>
-    <url>/2017/03/29/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</url>
-    <content><![CDATA[<p>关于循环依赖先说几个点总结</p>
-<ol>
-<li>依赖三级缓存以及<strong>提前暴露引用</strong></li>
-<li>循环依赖只能是单例的，如果是多例则会报错，多例循环依赖本身就是错误的，无法确定依赖那一个实例</li>
-<li>构造器注入的循环依赖无法处理，会报错</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>spring</tag>
-      </tags>
   </entry>
   <entry>
     <title>springboot的自动装配</title>
@@ -174,17 +149,40 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Taro学习</title>
+    <url>/2023/07/26/Taro%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>终端命令安装：npm i -g @tarojs&#x2F;cli ，注意当前的node版本。v18.17.0</p>
+<p>初始化项目 taro init</p>
+<p>安装路由 npm install vue-router –save</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>循环依赖</title>
+    <url>/2017/03/29/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</url>
+    <content><![CDATA[<p>关于循环依赖先说几个点总结</p>
+<ol>
+<li>依赖三级缓存以及<strong>提前暴露引用</strong></li>
+<li>循环依赖只能是单例的，如果是多例则会报错，多例循环依赖本身就是错误的，无法确定依赖那一个实例</li>
+<li>构造器注入的循环依赖无法处理，会报错</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>spring</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>池化技术导致cpu占用飙高问题分析</title>
     <url>/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<h1 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h1><p>某天其他部门的同事说，我负责的某个服务cpu占用很高，影响到他们的应用。我在想服务不是部署在容器里吗，不是资源隔离的吗，找了运维同事说，cpu确实没用限制。好吧，只能去分析原因了，否则影响到公司其他赚钱的业务系统就麻烦，处于责任心，和对技术的追求，决定还是处理一下。</p>
 <p>思路，根据经验，老夫信心满满，内存问题，泄露，溢出，首先是dump出来，Memory Analyzer Tool工具分析。cpu问题，看线程，死循环，100%cpu？大题思路是没有变的，开始表演。</p>
 <p>第一步，当然是找运维大佬，jstack pid 导出线程栈信息。然后top -H -p <pid> 查看线程那些线程占用高的。线程栈信息文件到手，top -H -p <pid>信息截图如下</pid></pid></p>
-<img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5.png" class title="线程占用情况">
-
+<p><img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5.png" alt="线程占用情况"></p>
 <p>看到这个图，心中万马奔腾，怎么和自己想的不一样，不是有线程名称吗，也没有cpu占用特别高的线程啊，怎么办呢。</p>
 <p>再仔细观察图，发现总共有561个线程，只有8个是running,553个是sleep状态。这里就十分奇怪了。到导出的线程栈文件看看那些线程是sleeping吧，没发现太多的线程sleeping，但是发现了很多是TIMED_WAITING状态，如下图</p>
-<img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E9%98%BB%E5%A1%9E.jpg" class title="线程占用情况">
-
+<p><img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E9%98%BB%E5%A1%9E.jpg" alt="线程占用情况"></p>
 <p>仔细看发现是httpclient导致线程阻塞，突然想到项目中有大量的数据同步请求，是使用httpclient连接池实现的。问题就处在连接池身上。去看看连接池的配置</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">defaultMaxConnection</span> <span class="operator">=</span> <span class="number">50</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">PoolingHttpClientConnectionManager</span> <span class="variable">cm</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PoolingHttpClientConnectionManager</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">	cm.setMaxTotal(<span class="number">100</span>);</span><br><span class="line">	cm.setDefaultMaxPerRoute(defaultMaxConnection);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> CloseableHttpClient <span class="title function_">getHttpClient</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> HttpClients.custom().setConnectionManager(cm).build();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -205,18 +203,15 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.util;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import org.apache.http.HttpStatus;</span><br><span class="line">import org.apache.http.client.config.RequestConfig;</span><br><span class="line">import org.apache.http.client.methods.CloseableHttpResponse;</span><br><span class="line">import org.apache.http.client.methods.HttpGet;</span><br><span class="line">import org.apache.http.impl.client.CloseableHttpClient;</span><br><span class="line">import org.apache.http.impl.client.HttpClients;</span><br><span class="line">import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;</span><br><span class="line">import org.apache.http.util.EntityUtils;</span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line">import java.util.HashMap;</span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">public class HttpClientUtils &#123;</span><br><span class="line"></span><br><span class="line">	private static Logger logger = LoggerFactory.getLogger(HttpClientUtils.class);</span><br><span class="line">	private static int defaultConnectionTimeout = 60000;</span><br><span class="line">	private static int defaultSoTimeout = 60000;</span><br><span class="line">	private static int defaultMaxConnection = 50;</span><br><span class="line">	private static PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();</span><br><span class="line"></span><br><span class="line">	static &#123;</span><br><span class="line">		cm.setMaxTotal(100);</span><br><span class="line">		cm.setDefaultMaxPerRoute(defaultMaxConnection);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static CloseableHttpClient getHttpClient() &#123;</span><br><span class="line"></span><br><span class="line">		return HttpClients.custom().setConnectionManager(cm).build();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static String doGet(String url, Map&lt;String, String&gt; headers) &#123;</span><br><span class="line"></span><br><span class="line">		long startTime = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">		HttpGet httppost = null;</span><br><span class="line"></span><br><span class="line">		try &#123;</span><br><span class="line"></span><br><span class="line">			CloseableHttpClient httpclient = getHttpClient();</span><br><span class="line"></span><br><span class="line">			httppost = new HttpGet(url);</span><br><span class="line">			httppost.setConfig(RequestConfig.custom().setConnectionRequestTimeout(defaultConnectionTimeout)</span><br><span class="line">					.setConnectTimeout(defaultConnectionTimeout).setSocketTimeout(defaultSoTimeout).build());</span><br><span class="line"></span><br><span class="line">			if (headers != null &amp;&amp; headers.size() &gt; 0) &#123;</span><br><span class="line">				for (Map.Entry&lt;String, String&gt; entry : headers.entrySet()) &#123;</span><br><span class="line">					httppost.addHeader(entry.getKey(), entry.getValue());</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			CloseableHttpResponse response = httpclient.execute(httppost);</span><br><span class="line"></span><br><span class="line">			int statusCode = response.getStatusLine().getStatusCode();</span><br><span class="line"></span><br><span class="line">			if (statusCode == HttpStatus.SC_OK) &#123;</span><br><span class="line">				return EntityUtils.toString(response.getEntity(), &quot;GBK&quot;);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				logger.warn(&quot;doPost failed: &quot; + EntityUtils.toString(response.getEntity()));</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			logger.error(&quot;url:&#123;&#125;,&quot;,url,e);</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			if (httppost != null) &#123;</span><br><span class="line">				httppost.releaseConnection();</span><br><span class="line">			&#125;</span><br><span class="line">			if (logger.isDebugEnabled()) &#123;</span><br><span class="line">				logger.debug(&quot;execute:&#123;&#125;,used time:&#123;&#125;ms &quot; ,url,(System.currentTimeMillis() - startTime));</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 300; i++) &#123;</span><br><span class="line">			Thread thread = new Thread(new Runnable() &#123;</span><br><span class="line">				@Override</span><br><span class="line">				public void run() &#123;</span><br><span class="line">					while (true)&#123;</span><br><span class="line">						String s = HttpClientUtils.doGet(&quot;http://localhost:3001/hello&quot;, new HashMap&lt;&gt;());</span><br><span class="line">						System.out.println(s+new Date());</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			thread.setName(&quot;requestThread&quot;+i);</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>线程统计</p>
-<img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E7%BB%9F%E8%AE%A1.jpg" class title="线程统计">
-
+<p><img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E7%BB%9F%E8%AE%A1.jpg" alt="线程统计"></p>
 <p>修改连接池配置 <em>defaultMaxConnection</em> 为 200 和 <em>cm</em>.setMaxTotal(200);</p>
 <p>再重新测试观察如下图</p>
-<img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E7%BB%9F%E8%AE%A12.jpg" class title="线程统计2">
-
+<p><img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E7%BB%9F%E8%AE%A12.jpg" alt="线程统计2"></p>
 <p>由此可以得出结论，合理配置httpclient连接数很重要。</p>
 <p>最后分析一下，在本次排查问题中学到的一些知识，由于本次的线程都是有spring rabbitmq的消费监听创建的，其实这些消费线程是使用线程池处理的，这些线程池已经做了自动缩容，扩容处理，一般不建议另外新旧线程消费处理。具体代码可以去看SimpleMessageListenerContainer类的considerStoppingAConsumer方法和adjustConsumers方法。</p>
 <h1 id="另外分析一个线程在线分析网站"><a href="#另外分析一个线程在线分析网站" class="headerlink" title="另外分析一个线程在线分析网站"></a>另外分析一个线程在线分析网站</h1><p> <a href="https://fastthread.io/">java线程分析网站</a></p>
-<img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%901.jpg" class title="线程分析1">
-
-<img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%902.jpg" class title="线程分析2">
+<p><img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%901.jpg" alt="线程分析1"></p>
+<p><img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%902.jpg" alt="线程分析2"></p>
 ]]></content>
   </entry>
   <entry>
