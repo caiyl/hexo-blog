@@ -147,6 +147,72 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/05/mysql%E6%89%B9%E9%87%8F%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/tou.png">
+      <meta itemprop="name" content="chase">
+      <meta itemprop="description" content="coder">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chase">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/05/mysql%E6%89%B9%E9%87%8F%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">mysql批量创建数据</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-05 11:48:13 / Modified: 14:20:51" itemprop="dateCreated datePublished" datetime="2023-09-05T11:48:13+08:00">2023-09-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> employee2</span><br><span class="line">(</span><br><span class="line">    id        <span class="type">int</span> <span class="keyword">primary</span> key,</span><br><span class="line">    LastName  <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">    FirstName <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">    Address   <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">    profile   <span class="type">varchar</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="创建插入数据存储过程"><a href="#创建插入数据存储过程" class="headerlink" title="创建插入数据存储过程"></a>创建插入数据存储过程</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> BulkInsert()</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">DECLARE</span> i <span class="type">INT</span> <span class="keyword">DEFAULT</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">truncate</span> <span class="keyword">table</span> employee2;</span><br><span class="line">    WHILE (i <span class="operator">&lt;=</span> <span class="number">20000</span>) DO</span><br><span class="line">            <span class="keyword">INSERT</span> <span class="keyword">INTO</span> employee2 (id,FirstName, Address) <span class="keyword">VALUES</span>(i,CONCAT(&quot;user&quot;,&quot;-&quot;,i), CONCAT(&quot;address&quot;,&quot;-&quot;,i));</span><br><span class="line">            <span class="keyword">SET</span> i <span class="operator">=</span> i<span class="operator">+</span><span class="number">1</span>;</span><br><span class="line">        <span class="keyword">END</span> WHILE;</span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="调用过程插入数据"><a href="#调用过程插入数据" class="headerlink" title="调用过程插入数据"></a>调用过程插入数据</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CALL</span> BulkInsert();</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -801,7 +867,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

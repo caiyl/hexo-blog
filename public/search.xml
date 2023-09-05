@@ -63,6 +63,30 @@
       </tags>
   </entry>
   <entry>
+    <title>Taro学习</title>
+    <url>/2023/07/26/Taro%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>终端命令安装：npm i -g @tarojs&#x2F;cli ，注意当前的node版本。v18.17.0</p>
+<p>初始化项目 taro init</p>
+<p>安装路由 npm install vue-router –save</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql批量创建数据</title>
+    <url>/2023/09/05/mysql%E6%89%B9%E9%87%8F%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h1 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> employee2</span><br><span class="line">(</span><br><span class="line">    id        <span class="type">int</span> <span class="keyword">primary</span> key,</span><br><span class="line">    LastName  <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">    FirstName <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">    Address   <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line">    profile   <span class="type">varchar</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="创建插入数据存储过程"><a href="#创建插入数据存储过程" class="headerlink" title="创建插入数据存储过程"></a>创建插入数据存储过程</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> BulkInsert()</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">DECLARE</span> i <span class="type">INT</span> <span class="keyword">DEFAULT</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">truncate</span> <span class="keyword">table</span> employee2;</span><br><span class="line">    WHILE (i <span class="operator">&lt;=</span> <span class="number">20000</span>) DO</span><br><span class="line">            <span class="keyword">INSERT</span> <span class="keyword">INTO</span> employee2 (id,FirstName, Address) <span class="keyword">VALUES</span>(i,CONCAT(&quot;user&quot;,&quot;-&quot;,i), CONCAT(&quot;address&quot;,&quot;-&quot;,i));</span><br><span class="line">            <span class="keyword">SET</span> i <span class="operator">=</span> i<span class="operator">+</span><span class="number">1</span>;</span><br><span class="line">        <span class="keyword">END</span> WHILE;</span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="调用过程插入数据"><a href="#调用过程插入数据" class="headerlink" title="调用过程插入数据"></a>调用过程插入数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CALL</span> BulkInsert();</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>mysql知识</title>
     <url>/2020/01/03/mysql%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[<h2 id="批量插入测试数据"><a href="#批量插入测试数据" class="headerlink" title="批量插入测试数据"></a>批量插入测试数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">PROCEDURE</span></span><br><span class="line">    IF <span class="keyword">EXISTS</span> test_insert;</span><br><span class="line"></span><br><span class="line">DELIMITER ;;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> test_insert()</span><br><span class="line"></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">DECLARE</span> number <span class="type">INT</span> <span class="keyword">DEFAULT</span> <span class="number">1</span>;</span><br><span class="line">    WHILE (number <span class="operator">&lt;=</span> <span class="number">10000</span>) DO</span><br><span class="line"></span><br><span class="line">        <span class="keyword">insert</span> <span class="keyword">into</span> testabc(a,b,c) <span class="keyword">values</span>(concat(<span class="string">&#x27;a&#x27;</span>,number),concat(<span class="string">&#x27;b&#x27;</span>,number),concat(<span class="string">&#x27;c&#x27;</span>,number));</span><br><span class="line">        <span class="keyword">SET</span> number <span class="operator">=</span> number <span class="operator">+</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">END</span> WHILE;</span><br><span class="line">    <span class="keyword">commit</span>;</span><br><span class="line"><span class="keyword">END</span>;;</span><br><span class="line"><span class="keyword">CALL</span> test_insert();</span><br></pre></td></tr></table></figure>
@@ -149,17 +173,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Taro学习</title>
-    <url>/2023/07/26/Taro%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>终端命令安装：npm i -g @tarojs&#x2F;cli ，注意当前的node版本。v18.17.0</p>
-<p>初始化项目 taro init</p>
-<p>安装路由 npm install vue-router –save</p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>循环依赖</title>
     <url>/2017/03/29/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/</url>
     <content><![CDATA[<p>关于循环依赖先说几个点总结</p>
@@ -172,6 +185,15 @@
       <tags>
         <tag>spring</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>遍历redis删除生产key</title>
+    <url>/2023/07/03/%E9%81%8D%E5%8E%86redis%E5%88%A0%E9%99%A4%E7%94%9F%E4%BA%A7key/</url>
+    <content><![CDATA[<p>某天运维说，你的系统redis存在大量的key不设置过期时间，而且key是乱码的（其实是jdk序列化的key）。</p>
+<p>我让运维备份出来，连上去，使用scan 0 match * count 10000，查看发现大量的key是:b’\xac\xed\x00\x05t\x00\x1a’开头的，以下是删除脚本</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># Redis </span></span><br><span class="line">redis_host = <span class="string">&#x27;xxx.xxx.xxxx&#x27;</span></span><br><span class="line">redis_port = <span class="number">6379</span></span><br><span class="line">redis_db = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分别扫描这三种模式的key删除</span></span><br><span class="line">key_pattern = <span class="string">&quot;hello*&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">r = redis.Redis(host=redis_host, port=redis_port, db=redis_db)</span><br><span class="line"></span><br><span class="line">batch_size = <span class="number">100</span></span><br><span class="line">cursor = <span class="number">0</span></span><br><span class="line">ct = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"></span><br><span class="line">    cursor, keys = r.scan(cursor=cursor, <span class="keyword">match</span>=key_pattern, count=batch_size)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> keys:</span><br><span class="line">    	r.delete(key)</span><br><span class="line">    	ct = ct+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> cursor == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="built_in">print</span>(ct)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;finsh&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>池化技术导致cpu占用飙高问题分析</title>
@@ -212,15 +234,6 @@
 <h1 id="另外分析一个线程在线分析网站"><a href="#另外分析一个线程在线分析网站" class="headerlink" title="另外分析一个线程在线分析网站"></a>另外分析一个线程在线分析网站</h1><p> <a href="https://fastthread.io/">java线程分析网站</a></p>
 <p><img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%901.jpg" alt="线程分析1"></p>
 <p><img src="/2023/08/31/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%87%B4cpu%E5%8D%A0%E7%94%A8%E9%A3%99%E9%AB%98%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/%E7%BA%BF%E7%A8%8B%E5%88%86%E6%9E%902.jpg" alt="线程分析2"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>遍历redis删除生产key</title>
-    <url>/2023/07/03/%E9%81%8D%E5%8E%86redis%E5%88%A0%E9%99%A4%E7%94%9F%E4%BA%A7key/</url>
-    <content><![CDATA[<p>某天运维说，你的系统redis存在大量的key不设置过期时间，而且key是乱码的（其实是jdk序列化的key）。</p>
-<p>我让运维备份出来，连上去，使用scan 0 match * count 10000，查看发现大量的key是:b’\xac\xed\x00\x05t\x00\x1a’开头的，以下是删除脚本</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># Redis </span></span><br><span class="line">redis_host = <span class="string">&#x27;xxx.xxx.xxxx&#x27;</span></span><br><span class="line">redis_port = <span class="number">6379</span></span><br><span class="line">redis_db = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分别扫描这三种模式的key删除</span></span><br><span class="line">key_pattern = <span class="string">&quot;hello*&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">r = redis.Redis(host=redis_host, port=redis_port, db=redis_db)</span><br><span class="line"></span><br><span class="line">batch_size = <span class="number">100</span></span><br><span class="line">cursor = <span class="number">0</span></span><br><span class="line">ct = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"></span><br><span class="line">    cursor, keys = r.scan(cursor=cursor, <span class="keyword">match</span>=key_pattern, count=batch_size)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> keys:</span><br><span class="line">    	r.delete(key)</span><br><span class="line">    	ct = ct+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> cursor == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="built_in">print</span>(ct)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;finsh&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 ]]></content>
   </entry>
 </search>
